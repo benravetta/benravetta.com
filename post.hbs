@@ -185,7 +185,7 @@ into the {body} of the default.hbs template --}}
         </div>
       </section>
       <div class="l-comments">
-        {{> comments}}
+        <div id="commento"></div>
       </div>
       {{!-- Related posts --}}
       {{#get "posts" limit="3" filter="tags:{{primary_tag.slug}}+id:-{{id}}" as |related_posts|}}
