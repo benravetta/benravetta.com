@@ -661,14 +661,6 @@
 	font-size: 15px
 }
 
-@font-face {
-	font-style: normal;
-	font-display: swap;
-	font-weight: 300;
-	src: local("Source Sans Pro Light"), local("SourceSansPro-Light"), url(https://cdn.commento.io/fonts/source-sans-300-cyrillic-ext.woff2) format("woff2");
-	unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F
-}
-
 .commento-root .commento-login-box-container .commento-login-box button,
 .commento-root .commento-login-box-container .commento-login-box input,
 .commento-root .commento-login-box-container .commento-login-box textarea {
@@ -957,5 +949,5 @@
 }
 
 .commento-root-font * {
-	font-family: 'Source Sans Pro', sans-serif
+	font-family: 'Domaine Display Narrow Semibold', sans-serif
 }
