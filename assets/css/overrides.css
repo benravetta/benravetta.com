@@ -266,7 +266,7 @@
 
 .commento-root .commento-submit-button {
 	float: right;
-	background: #1971c2;
+	background: #42EF6E;
 	text-transform: uppercase;
 	font-size: 12px;
 	margin-top: 10px
@@ -944,7 +944,7 @@
 }
 
 .commento-root .commento-sort-policy-buttons-container .commento-sort-policy-buttons .commento-sort-policy-button-selected {
-	color: #1971c2;
+	color: #42EF6E;
 	font-weight: 700
 }
 
