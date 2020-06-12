@@ -3,6 +3,9 @@
 
 <head>
 
+  <!-- TocBot CSS - Table of Contents for posts -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.10.0/tocbot.css" />
+
   <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-142392256-2"></script>
   <script>
@@ -93,13 +96,6 @@
 </head>
 
 <body class="{{body_class}}">
-
-  <symbol viewBox="0 0 451 590" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2" id="brightwork">
-  <title>Brightwork Icon</title>
-    <path d="M202.336 0C126.499 0 50.862 33.991 4.946 88.717c-7.515 8.988-6.33 22.405 2.628 29.92 4.359 3.643 9.844 5.304 15.497 4.877 5.654-.498 10.77-3.165 14.404-7.505 38.062-45.368 101.237-73.546 164.861-73.546 113.37 0 205.61 92.239 205.61 205.61 0 54.924-21.389 106.564-60.228 145.402-8.272 8.272-8.272 21.739 0 30.021a21.099 21.099 0 0 0 15.01 6.22c5.682 0 11.019-2.209 15.009-6.22 46.863-46.852 72.672-109.152 72.672-175.423C450.409 111.282 339.127 0 202.336 0"></path>
-    <path d="M331.085 128.371c-32.887-35.504-77.567-56.058-125.814-57.9-48.144-1.762-94.418 15.27-129.902 48.166-35.465 32.876-56 77.558-57.842 125.803-2.488 65.106 30.468 126.829 85.96 161.049a35.138 35.138 0 0 0 18.522 5.265c12.354 0 23.582-6.28 30.021-16.761 10.202-16.534 5.038-38.302-11.516-48.524-33.913-20.902-54.037-58.586-52.525-98.342 2.309-60.826 53.56-108.833 114.595-106.185 60.876 2.309 108.505 53.73 106.185 114.606-1.393 36.728-20.893 70.263-52.176 89.703-16.503 10.272-21.6 32.049-11.328 48.572 10.243 16.453 31.992 21.57 48.555 11.317 51.2-31.83 83.142-86.754 85.431-146.914 1.832-48.245-15.27-94.359-48.166-129.855m-78.105 302.51H114.316c-11.257 0-20.385 9.128-20.385 20.384 0 11.259 9.128 20.385 20.385 20.385H252.98c5.016 0 9.097 4.081 9.097 9.097 0 5.018-4.081 9.098-9.097 9.098H152.767c-27.461 0-49.797 22.338-49.797 49.788 0 27.463 22.336 49.798 49.797 49.798h90.349c11.256 0 20.384-9.128 20.384-20.384 0-11.258-9.128-20.385-20.384-20.385h-90.349c-4.977 0-9.028-4.051-9.028-9.029 0-4.977 4.051-9.017 9.028-9.017H252.98c27.502 0 49.866-22.366 49.866-49.869 0-27.5-22.364-49.866-49.866-49.866"></path>
-  </symbol>
-</svg>
   
   {{!-- All the main content gets inserted here, index.hbs, post.hbs, etc --}}
   {{{body}}}
@@ -181,6 +177,17 @@
   <script defer src="{{asset "js/manifest.js"}}"></script>
   <script defer src="{{asset "js/vendor.js"}}"></script>
   <script defer src="{{asset "js/app.js"}}"></script>
+
+  <!-- TocBot JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.10.0/tocbot.min.js"></script>
+  <script>
+      tocbot.init({
+          tocSelector: '.toc',
+          contentSelector: 'm-article-hero__content',
+          hasInnerContainers: true
+      });
+  </script>
+  <!-- end of TocBot -->
 
   {{!-- The #block helper will pull in data from the #contentFor other template files --}}
   {{{block "scripts"}}}
