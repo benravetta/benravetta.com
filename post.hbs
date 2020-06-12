@@ -65,14 +65,18 @@ into the {body} of the default.hbs template --}}
                 {{!-- if the user does not have access, show them an upgrade CTA --}}
                 <p class="align-center">
                   {{t "You don't have access to this post at the moment, but if you upgrade your account you'll be able to see the
-                          whole thing, as well as all the other posts in the archive! Subscribing only takes a few seconds and will give you
-                          immediate access."}}
+                          whole thing, as well as all the other posts in the archive! Subscribing only takes a few seconds and will give you immediate access."}}
                 </p>
                 {{> "full-content"}}
               {{/if}}
             </section>
             {{!-- Share  --}}
             <div class="m-article-share">
+
+              <aside class="toc-container">
+                <div class="toc"></div>
+              </aside>
+
               <div class="m-article-share__container js-sticky">
                 <a href="https://www.facebook.com/sharer/sharer.php?u={{url absolute='true'}}" class="m-article-share__button"
                   target="_blank" rel="noopener" aria-label="Facebook">
