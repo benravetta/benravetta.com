@@ -72,11 +72,6 @@ into the {body} of the default.hbs template --}}
             </section>
             {{!-- Share  --}}
             <div class="m-article-share">
-
-              <aside class="toc-container">
-                <div class="toc"></div>
-              </aside>
-
               <div class="m-article-share__container js-sticky">
                 <a href="https://www.facebook.com/sharer/sharer.php?u={{url absolute='true'}}" class="m-article-share__button"
                   target="_blank" rel="noopener" aria-label="Facebook">
@@ -93,6 +88,9 @@ into the {body} of the default.hbs template --}}
                 <input type="text" value="{{url absolute='true'}}" class="no-appearance invisible sr-only js-input-link">
               </div>
             </div>
+            <aside class="toc-container">
+                <div class="toc"></div>
+            </aside>
             {{!-- List of tags  --}}
             {{#if tags}}
               <div class="l-tags">
