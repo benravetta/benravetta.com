@@ -88,6 +88,72 @@ into the {body} of the default.hbs template --}}
                 <input type="text" value="{{url absolute='true'}}" class="no-appearance invisible sr-only js-input-link">
               </div>
             </div>
+
+            <style>
+            /* Start Table of Contents styling */ 
+            .toc-container {
+                display: -webkit-box;
+                display: flex;
+                -webkit-box-align: right;
+                align-items: left;
+            }
+                
+            /* Extra small devices (phones, 600px and down) */
+            @media only screen and (max-width: 600px),
+            only screen and (min-width: 600px)
+            /* Medium devices (landscape tablets, 768px and up) */
+            @media(min-width: 768px) and (orientation:landscape),
+            only screen and (max-width: 768px)  {
+              .tiktoc {
+                display: none;
+              }
+              .toc-container {
+              display: none;
+                }
+            }
+
+
+
+            /* Extra large devices (large laptops and desktops, 1200px and up) */
+            @media only screen and (min-width: 1200px)
+            {
+                
+                .tiktoc {
+                position: absolute;
+                top: 175px;
+                left: 1150px;
+                bottom: 0;
+                width: 350px;
+                margin-bottom: 0;
+                }
+                
+                .toc {
+                    font-size: 16px;
+                    line-height: 1.6em;
+                padding: 20px;
+                    background-color: #212121;
+                    color: #fff;
+                }
+                .toc-title {
+                    font-size: 22px;
+                    font-weight: bolder;
+                    padding-bottom: 10px;
+                    text-align: left;
+                    color: var(--primary-foreground-color);
+                }
+                .is-active-link::before {
+                background-color: #5232f5;
+              }
+            }
+                
+                h1:focus, h2:focus, h3:focus, h4:focus, h5:focus, h6:focus, h7:focus {
+              outline: none !important;
+              box-shadow: none !important;
+            }
+                
+                /* End of Table of Contents Styling */
+            </style>
+
             <div id="desktop-toc" class="tiktoc">
             <p class="toc-title">Content Navigation</p>
             <aside class="toc-container js-sticky">
