@@ -5,7 +5,7 @@ This template is used to display the form where users can subscribe to the newsl
 <div class="m-newsletter__container">
   <form data-members-form="subscribe" id="newsletter-form" class="m-newsletter__form-container">
     <div class="m-newsletter__form">
-      <h1 class="m-newsletter__title">{{t "Subscribe to our newsletter"}}</h1>
+      <h1 class="m-newsletter__title">{{t "Subscribe to the newsletter"}}</h1>
       <p class="m-newsletter__description">
         {{t "Get the latest posts delivered right to your inbox."}}
       </p>
@@ -21,7 +21,7 @@ This template is used to display the form where users can subscribe to the newsl
       <img src="{{asset "images/subscribe/success-illustration.svg"}}" alt="Success!" class="m-newsletter__illustration">
       <h1 class="m-newsletter__title">{{t "Awesome!"}}</h1>
       <p class="m-newsletter__description {{#is "home"}}no-margin{{/is}}">
-        {{t "Now check your inbox and click the link to confirm your subscription."}}
+        {{t "Now head to your inbox and click the link to confirm your subscription."}}
       </p>
       {{^is "home"}}
         <a href="{{@site.url}}" class="m-button outlined">{{t "Back to home"}}</a>
