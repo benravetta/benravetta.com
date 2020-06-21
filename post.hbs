@@ -223,7 +223,7 @@ into the {body} of the default.hbs template --}}
             {{!-- Table of Contents ends --}}
 
             {{#get "posts" limit="5" filter="tags:[{{post.tags}}]+id:-{{post.id}}" include="tags" as |related|}}
-            
+
             <div id="desktop-rel" class="related-post">
             <p class="rel-title">Related Posts</p>
             <aside class="related-container js-sticky">
@@ -234,10 +234,11 @@ into the {body} of the default.hbs template --}}
                     <li><a href="{{url}}">{{title}}</a></li>
                     {{/foreach}}
                   </ol>
+                  {{else}}
+                  <p>Content for a fallback when no related posts are available.</p>
 
                 </div>
-                {{else}}
-                <p>Content for a fallback when no related posts are available.</p>
+  
             {{/get}}
             </aside>
             </div>
