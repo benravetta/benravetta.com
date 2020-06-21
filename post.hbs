@@ -218,13 +218,13 @@ into the {body} of the default.hbs template --}}
             </aside>
             </div>
             {{#get "posts" limit="5" filter="tags:[{{post.tags}}]+id:-{{post.id}}" include="tags" as |related|}}
-            
+
             <div id="desktop-featured" class="featuring">
             <aside class="featured-container js-sticky">
                 <div class="feat">
                   
                   <ol>
-                    {{#foreach featured}}
+                    {{#foreach related}}
                     <li><a href="{{url}}">{{title}}</a></li>
                     {{/foreach}}
                   </ol>
