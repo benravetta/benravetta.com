@@ -183,14 +183,14 @@ into the {body} of the default.hbs template --}}
                 
                 .featuring {
                 position: absolute;
-                top: 175px;
+                top: 375px;
                 left: 1150px;
                 bottom: 0;
                 width: 350px;
                 margin-bottom: 0;
                 }
                 
-                .toc {
+                .feat {
                     font-size: 16px;
                     line-height: 1.6em;
                 padding: 20px;
@@ -217,6 +217,23 @@ into the {body} of the default.hbs template --}}
                 <div class="toc"></div>
             </aside>
             </div>
+            {{#get "posts" filter="featured:true" limit="3" as |featured|}}
+            <div id="desktop-featured" class="featuring">
+            <aside class="featured-container js-sticky">
+                <div class="feat">
+                  
+                  <ol>
+                    {{#foreach featured}}
+                    <li><a href="{{url}}">{{title}}</a></li>
+                    {{/foreach}}
+                  </ol>
+
+                </div>
+            </aside>
+            </div>
+            {{else}}
+            <p>Looks like I need to write more!</p>
+            {{/get}}
             {{!-- List of tags  --}}
             {{#if tags}}
               <div class="l-tags">
