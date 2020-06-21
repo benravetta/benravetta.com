@@ -223,6 +223,10 @@ into the {body} of the default.hbs template --}}
             </div>
             {{!-- Table of Contents ends --}}
 
+            {{/post}}
+
+            {{!-- Related Post Block begins --}}
+
             {{#get "posts" limit="5" filter="tags:[{{post.tags}}]+id:-{{post.id}}" include="tags" as |related|}}
 
             <div id="desktop-rel" class="related-post">
@@ -245,6 +249,8 @@ into the {body} of the default.hbs template --}}
             </div>
 
             {{!-- Related Posts Block ends --}}
+
+            {{#post}}
 
             {{!-- List of tags  --}}
             {{#if tags}}
