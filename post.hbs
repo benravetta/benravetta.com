@@ -222,14 +222,15 @@ into the {body} of the default.hbs template --}}
             </div>
             {{!-- Table of Contents ends --}}
 
-            {{#get "posts" filter="featured:true" limit="3" as |featured|}}
+            {{#get "posts" limit="5" filter="tags:[{{post.tags}}]+id:-{{post.id}}" include="tags" as |related|}}
+            
             <div id="desktop-rel" class="related-post">
             <p class="rel-title">Related Posts</p>
             <aside class="related-container js-sticky">
                 <div class="relish">
                   
                   <ol>
-                    {{#foreach featured}}
+                    {{#foreach related}}
                     <li><a href="{{url}}">{{title}}</a></li>
                     {{/foreach}}
                   </ol>
