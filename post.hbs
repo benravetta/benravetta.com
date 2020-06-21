@@ -152,9 +152,9 @@ into the {body} of the default.hbs template --}}
                 
                 /* End of Table of Contents Styling */
 
-                /* Start of Featured Posts */
+                /* Start of related Posts */
 
-              .featured-container {
+              .related-container {
                 display: -webkit-box;
                 display: flex;
                 -webkit-box-align: right;
@@ -167,10 +167,10 @@ into the {body} of the default.hbs template --}}
             /* Medium devices (landscape tablets, 768px and up) */
             @media(min-width: 768px) and (orientation:landscape),
             only screen and (max-width: 768px)  {
-              .featuring {
+              .related-post {
                 display: none;
               }
-              .featured-container {
+              .related-container {
               display: none;
                 }
             }
@@ -181,7 +181,7 @@ into the {body} of the default.hbs template --}}
             @media only screen and (min-width: 1200px)
             {
                 
-                .featuring {
+                .related-post {
                 position: absolute;
                 top: 375px;
                 left: 1150px;
@@ -190,14 +190,14 @@ into the {body} of the default.hbs template --}}
                 margin-bottom: 0;
                 }
                 
-                .feat {
+                .relish {
                     font-size: 16px;
                     line-height: 1.6em;
                 padding: 20px;
                     background-color: #212121;
                     color: #fff;
                 }
-                .featured-title {
+                .rel-title {
                     font-size: 22px;
                     font-weight: bolder;
                     padding-bottom: 10px;
@@ -212,29 +212,34 @@ into the {body} of the default.hbs template --}}
             </style>
 
             <div id="desktop-toc" class="tiktoc">
-            <p class="featured-title">Content Navigation</p>
+            <p class="toc-title">Content Navigation</p>
             <aside class="toc-container js-sticky">
                 <div class="toc"></div>
             </aside>
             </div>
-            {{#get "posts" limit="5" filter="tags:[{{post.tags}}]+id:-{{post.id}}" include="tags" as |related|}}
+            {{!-- Table of Contents ends --}}
 
-            <div id="desktop-featured" class="featuring">
-            <aside class="featured-container js-sticky">
-                <div class="feat">
+            {{#get "posts" filter="featured:true" limit="3" as |featured|}}
+            <div id="desktop-rel" class="related-post">
+            <p class="rel-title">Related Posts</p>
+            <aside class="related-container js-sticky">
+                <div class="relish">
                   
                   <ol>
-                    {{#foreach related}}
+                    {{#foreach featured}}
                     <li><a href="{{url}}">{{title}}</a></li>
                     {{/foreach}}
                   </ol>
 
                 </div>
+                {{else}}
+                <p>Content for a fallback when no related posts are available.</p>
+            {{/get}}
             </aside>
             </div>
-            {{else}}
-            <p>Looks like I need to write more!</p>
-            {{/get}}
+
+            {{!-- Related Posts Block ends --}}
+
             {{!-- List of tags  --}}
             {{#if tags}}
               <div class="l-tags">
