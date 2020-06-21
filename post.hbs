@@ -207,9 +207,10 @@ into the {body} of the default.hbs template --}}
                     text-align: left;
                     color: var(--primary-foreground-color);
                 }
-                .is-active-link::before {
-                background-color: #FE0152;
-              }
+                .fallback-p {
+                    color: black;
+                    padding-top: 30px;
+                }
             }
 
             </style>
@@ -235,7 +236,7 @@ into the {body} of the default.hbs template --}}
                     {{/foreach}}
                   </ol>
                   {{else}}
-                  <p>Content for a fallback when no related posts are available.</p>
+                  <p class="fallback-p">Content for a fallback when no related posts are available.</p>
 
                 </div>
   
