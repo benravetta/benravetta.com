@@ -215,42 +215,15 @@ into the {body} of the default.hbs template --}}
 
             </style>
 
-            <div id="desktop-toc" class="tiktoc js-sticky">
+            <div id="desktop-toc" class="tiktoc">
             <p class="toc-title">Content Navigation</p>
-            <aside class="toc-container">
+            <aside class="toc-container js-sticky">
                 <div class="toc"></div>
             </aside>
             </div>
             {{!-- Table of Contents ends --}}
 
-            {{/post}}
-
-            {{!-- Related Post Block begins --}}
-
-            {{#get "posts" limit="5" filter="tags:[{{post.tags}}]+id:-{{post.id}}" include="tags" as |related|}}
-
-            <div id="desktop-rel" class="related-post">
-            <p class="rel-title">Related Posts</p>
-            <aside class="related-container js-sticky">
-                <div class="relish">
-                  
-                  <ol>
-                    {{#foreach related}}
-                    <li><a href="{{url}}">{{title}}</a></li>
-                    {{/foreach}}
-                  </ol>
-                  {{else}}
-                  <p class="fallback-p">Content for a fallback when no related posts are available.</p>
-
-                </div>
-  
-            {{/get}}
-            </aside>
-            </div>
-
-            {{!-- Related Posts Block ends --}}
-
-            {{#post}}
+            
 
             {{!-- List of tags  --}}
             {{#if tags}}
