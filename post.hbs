@@ -27,7 +27,7 @@ into the {body} of the default.hbs template --}}
                   <a href="{{primary_tag.url}}" class="m-primary-tag">{{primary_tag.name}}</a>
                 {{/if}}
                 <p class="m-article-metas__time">
-                  <span>{{date published_at timeago="true"}}</span>
+                  <span>First published: {{date published_at timeago="true"}} | Last Updated: {{date updated_at format="YYYY-MM-DD"}}</span>
                   <span>&nbsp; &bull; &nbsp;</span>
                   <span>{{reading_time minute=(t "1 min read") minutes=(t "% min read")}}</span>
                 </p>
