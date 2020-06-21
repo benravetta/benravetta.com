@@ -197,7 +197,7 @@ into the {body} of the default.hbs template --}}
                     background-color: #212121;
                     color: #fff;
                 }
-                .toc-title {
+                .featured-title {
                     font-size: 22px;
                     font-weight: bolder;
                     padding-bottom: 10px;
@@ -212,12 +212,13 @@ into the {body} of the default.hbs template --}}
             </style>
 
             <div id="desktop-toc" class="tiktoc">
-            <p class="toc-title">Content Navigation</p>
+            <p class="featured-title">Content Navigation</p>
             <aside class="toc-container js-sticky">
                 <div class="toc"></div>
             </aside>
             </div>
-            {{#get "posts" filter="featured:true" limit="3" as |featured|}}
+            {{#get "posts" limit="5" filter="tags:[{{post.tags}}]+id:-{{post.id}}" include="tags" as |related|}}
+{{/get}}
             <div id="desktop-featured" class="featuring">
             <aside class="featured-container js-sticky">
                 <div class="feat">
