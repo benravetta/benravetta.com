@@ -154,68 +154,6 @@ into the {body} of the default.hbs template --}}
                 
                 /* End of Table of Contents Styling */
 
-                /* Start of related Posts */
-
-              .related-container {
-                display: -webkit-box;
-                display: flex;
-                 : auto;
-                -webkit-box-align: right;
-                align-items: left;
-            }
-                
-            /* Extra small devices (phones, 600px and down) */
-            @media only screen and (max-width: 600px),
-            only screen and (min-width: 600px)
-            /* Medium devices (landscape tablets, 768px and up) */
-            @media(min-width: 768px) and (orientation:landscape),
-            only screen and (max-width: 768px)  {
-              .related-post {
-                display: none;
-              }
-              .related-container {
-              display: none;
-                }
-            }
-
-
-
-            /* Extra large devices (large laptops and desktops, 1200px and up) */
-            @media only screen and (min-width: 1200px)
-            {
-                
-                .related-post {
-                position: absolute;
-                top: 375px;
-                left: 1150px;
-                bottom: 0;
-                width: 350px;
-                margin-bottom: 0;
-                }
-                
-                .relish {
-                    font-size: 16px;
-                    line-height: 1.6em;
-                    padding: 20px;
-                    min-width: 250px;
-                    max-width: 300px;
-                    background-color: #212121;
-                    color: #fff;
-                }
-                .rel-title {
-                    font-size: 22px;
-                    font-weight: bolder;
-                    padding-bottom: 10px;
-                    text-align: left;
-                    color: var(--primary-foreground-color);
-                }
-                .fallback-p {
-                    color: black;
-                    display: flex;
-                    padding-bottom: 30px;
-                }
-            }
-
             </style>
 
             <div id="desktop-toc" class="tiktoc">
